@@ -1,0 +1,5 @@
+<?
+function getNombre(){
+  return "Jonathan";
+}
+?>

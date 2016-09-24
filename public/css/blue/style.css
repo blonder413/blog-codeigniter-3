@@ -1,0 +1,200 @@
+z/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+/*
+    Created on : 31/07/2015, 08:56:01 PM
+    Author     : blonder413
+*/
+
+@import url("http://fonts.googleapis.com/css?family=Arimo|Roboto|Asap");
+
+a {
+    color: #34A419;
+}
+
+body {
+  font-family: Arimo;
+  padding-top: 70px;
+}
+
+footer {
+    background-color: #428bca;
+    color: #fff;
+    padding-bottom: 1em;
+}
+
+footer a {
+    color: #BAFFA9;
+}
+
+.badge a {
+    color: #FFF;
+}
+
+.bg-danger {
+    padding: 1em;
+}
+
+.fb-like {
+    margin-top: -.7em;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.comment-post {
+    margin-top: 3em;
+}
+
+.course-title{
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    color: #34A419;
+    display: block;
+    padding: 10px;
+}
+
+
+.course-title:hover{
+    background-color: #428bca;
+    border: 1px solid #CCC;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.icon-bar {
+  background-color: #fff;
+  color: #fff;
+}
+
+.item-comment {
+    list-style: none;
+    padding: 0;
+}
+
+.item-comment li {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 1em 0 1em;
+}
+
+.item-comment-name {
+    font-style: italic;
+}
+
+.jumbotron {
+  background-color: #428bca;
+  color: #fff;
+  margin-top: -20px;
+  padding: 0;
+  text-align: center;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.main {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #fff;
+  color: #428bca;
+  text-decoration: none;
+}
+
+.navbar-blue {
+  background-color: #428bca;
+  opacity: 0.9;
+}
+
+.navbar-blue a {
+  color: #fff;
+}
+
+.navbar-blue span {
+  color: #fff;
+}
+
+.navbar-blue .navbar-nav > .active > a,
+.navbar-blue .navbar-nav > .active > a:hover,
+.navbar-blue .navbar-nav > .active > a:focus {
+    color: #428bca;
+    background-color: #fff;
+}
+
+.navbar-brand {
+    margin: auto 0;
+    padding: .5em 0;
+}
+
+.navbar-left {
+    font-size: 1.5em !important;
+}
+
+.post {
+  border-bottom: 1px solid #999;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.post .container-buttons {
+  display: inline-block;
+  width: 100%;
+}
+
+.post .post-title a {
+  color: #34A419;
+}
+
+.post .thumb {
+  margin-right: 10px;
+  width: 25%;
+}
+
+.post .thumb img {
+  width: 100%;
+}
+
+.socialShareBlock a{
+    float: left;
+    padding: .3em;
+}
+
+.video-responsive {
+    height: 0px;
+    margin-bottom: 2em;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+}
+
+.video-responsive iframe{
+    border: .5em #ffb100 outset;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+/* -- Media Query -- */
+
+@media screen and (max-width: 768px) {
+  .post .thumb {
+    margin-bottom: 20px;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-left {
+    font-size: 1.5em !important;
+  }
+}
