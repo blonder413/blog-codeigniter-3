@@ -15,7 +15,7 @@ class Article_model extends CI_Model{
   //obtenemos el total de registros
   function count()
   {
-    return $this->db->count_all('article');
+    return $this->db->count_all('articles');
     /*
     $query=$this->db
                 ->from("article")
@@ -27,18 +27,18 @@ class Article_model extends CI_Model{
   public function delete($id)
   {
     $this->db->where("id", $id);
-    $this->db->delete("article");
+    $this->db->delete("articles");
   }
 
   public function find($id = null)
   {
       if (is_null($id)) {
-        $query = $this->db->get("article");
+        $query = $this->db->get("articles");
 
         return $query->result();
       } else {
         $this->db->where("id", $id);
-        $query = $this->db->get("article");
+        $query = $this->db->get("articles");
 
         return $query->row();
       }
@@ -46,8 +46,8 @@ class Article_model extends CI_Model{
 
    public function findBySlug($slug)
    {
-      $this->db->where('seo_slug', $slug);
-      $query = $this->db->get('article');
+      $this->db->where('slug', $slug);
+      $query = $this->db->get('articles');
       return $query->row();
    }
 
@@ -59,13 +59,13 @@ class Article_model extends CI_Model{
   {
     if (is_null($limit) or is_null($offset)) {
       $query=$this->db
-                ->from("article")
+                ->from("articles")
                 ->order_by("id","desc")
                 ->get();
                 return $query->result();
     } else {
       $query=$this->db
-                ->from("article")
+                ->from("articles")
                 ->order_by("id","desc")
                 ->limit($offset,$limit)
                 ->get();
@@ -88,7 +88,7 @@ class Article_model extends CI_Model{
     $this->updated_at = time();
 
 
-    $this->db->insert("article", $this);
+    $this->db->insert("articles", $this);
 
     /*
     $sql = "INSERT INTO type VALUES($this->db->escape($this->type))";
@@ -105,6 +105,6 @@ class Article_model extends CI_Model{
 
 //    $this->db->update("type", $this, array("id" => $_POST["id"]));
     $this->db->where("id", $id);
-    $this->db->update("article", $this);
+    $this->db->update("articles", $this);
   }
 }

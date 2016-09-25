@@ -18,7 +18,7 @@ class Category_model extends CI_Model{
   //obtenemos el total de registros
   function count()
   {
-    return $this->db->count_all('category');
+    return $this->db->count_all('categories');
     /*
     $query=$this->db
                 ->from("article")
@@ -30,18 +30,18 @@ class Category_model extends CI_Model{
   public function delete($id)
   {
     $this->db->where("id", $id);
-    $this->db->delete("category");
+    $this->db->delete("categories");
   }
 
   public function find($id = null)
   {
       if (is_null($id)) {
-        $query = $this->db->get("category");
+        $query = $this->db->get("categories");
 
         return $query->result();
       } else {
         $this->db->where("id", $id);
-        $query = $this->db->get("category");
+        $query = $this->db->get("categories");
 
         return $query->row();
       }
@@ -55,13 +55,13 @@ class Category_model extends CI_Model{
   {
     if (is_null($limit) or is_null($offset)) {
       $query=$this->db
-                ->from("category")
+                ->from("categories")
                 ->order_by("category","asc")
                 ->get();
                 return $query->result();
     } else {
       $query=$this->db
-                ->from("category")
+                ->from("categories")
                 ->order_by("category","asc")
                 ->limit($offset,$limit)
                 ->get();
@@ -80,7 +80,7 @@ class Category_model extends CI_Model{
     $this->created_at = time();
     $this->updated_at = time();
 
-    $this->db->insert("category", $this);
+    $this->db->insert("categories", $this);
 
     /*
     $sql = "INSERT INTO type VALUES($this->db->escape($this->type))";
@@ -97,6 +97,6 @@ class Category_model extends CI_Model{
 
 //    $this->db->update("type", $this, array("id" => $_POST["id"]));
     $this->db->where("id", $id);
-    $this->db->update("category", $this);
+    $this->db->update("categories", $this);
   }
 }
