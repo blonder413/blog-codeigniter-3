@@ -76,6 +76,20 @@ class Welcome extends MY_Controller {
         $this->layout($this->data);
 	}
 	//-----------------------------------------------------------------------------------------------------------------
+	public function about()
+	{
+		$this->load->model('category_model');
+		
+		$categories = $this->category_model->get();
+		
+		$this->data = [
+			'categories'	=> $categories,
+			'title'			=> 'Acerca | Blonder413',
+		];
+		$this->content = 'welcome/about';
+		$this->layout($this->data);
+	}
+	//-----------------------------------------------------------------------------------------------------------------
 	public function article($slug)
 	{
 		$this->load->model('article_model');

@@ -60,6 +60,7 @@ class Migration_Add_articles extends CI_Migration {
                         ),
                         'status' => array(
                                 'type' => 'BOOLEAN',
+                                'default'       => FALSE,
                         ),
                         'visit_counter' => array(
                                 'type' => 'INT',

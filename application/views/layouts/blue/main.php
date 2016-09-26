@@ -34,18 +34,18 @@
                     </li>
                 </ul>
                 <ul id="w3" class="navbar-nav navbar-right nav">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/portafolio">Portafolio</a></li>
-                    <li><a href="/acerca">Acerca</a></li>
-                    <li><a href="/en-vivo">En Vivo</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="portafolio">Portafolio</a></li>
+                    <li><a href="acerca">Acerca</a></li>
+                    <li><a href="en-vivo">En Vivo</a></li>
+                    <li><a href="contacto">Contacto</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Cursos <b class="caret"></b></a>
                         <ul id="w4" class="dropdown-menu">
-                            <li><a href="/curso/google" tabindex="-1">Google</a></li>
-                            <li><a href="/curso/mysql" tabindex="-1">MySQL</a></li>
-                            <li><a href="/curso/php-5" tabindex="-1">PHP 5</a></li>
-                            <li><a href="/curso/yiiframework-2" tabindex="-1">YiiFramework 2</a></li>
+                            <li><a href="curso/google" tabindex="-1">Google</a></li>
+                            <li><a href="curso/mysql" tabindex="-1">MySQL</a></li>
+                            <li><a href="curso/php-5" tabindex="-1">PHP 5</a></li>
+                            <li><a href="curso/yiiframework-2" tabindex="-1">YiiFramework 2</a></li>
                         </ul>
                     </li>
                 </ul>
