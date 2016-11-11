@@ -32,7 +32,8 @@ class Migration_Add_streamings extends CI_Migration {
                                 'type' => 'INT',
                                 'constraint' => 5,
                                 'unsigned' => TRUE,
-                        ),'created_at' => array(
+                        ),
+                        'created_at' => array(
                                 'type' => 'DATETIME',
                         ),
                         'updated_by' => array(
@@ -40,7 +41,6 @@ class Migration_Add_streamings extends CI_Migration {
                                 'constraint' => 5,
                                 'unsigned' => TRUE,
                         ),
-                        
                         'updated_at' => array(
                                 'type' => 'DATETIME',
                         ),

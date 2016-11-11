@@ -109,3 +109,60 @@ if(!function_exists("calculaEdad")) {
 		return $edad;
 	}
 }
+
+/**
+ * validación set Value select
+ **/
+   if(!function_exists('set_value_select'))
+   {
+     function set_value_select($result=array(),$post,$campo,$valor)
+     {
+        if(sizeof($result)==0)
+                {
+                    if(isset($_POST[$post]) and $_POST[$post]==$valor)
+                    {
+                         return 'selected="true"';   
+                    }else
+                    {
+                        return '';
+                    }
+                }else
+                {
+                    if($campo==$valor)
+                    {
+                         return 'selected="true"';   
+                    }else
+                    {
+                        return '';
+                    }
+                }
+     }
+   } 
+   /**
+ * validación set Value Producción input
+ **/
+   if(!function_exists('set_value_input'))
+   {
+     function set_value_input($result=array(),$post,$campo)
+     {
+        if(sizeof($result)==0)
+                {
+                    if(isset($_POST[$post]))
+                    {
+                         return $_POST[$post];   
+                    }else
+                    {
+                        return '';
+                    }
+                }else
+                {
+                    if($campo)
+                    {
+                         return $campo;   
+                    }else
+                    {
+                        return '';
+                    }
+                }
+     }
+   }
