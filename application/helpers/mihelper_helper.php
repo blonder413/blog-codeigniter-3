@@ -166,3 +166,43 @@ if(!function_exists("calculaEdad")) {
                 }
      }
    }
+   
+/**
+ * Configuración general de paginación
+ * @param String $base_url ruta a la que apunta la paginación
+ * @param Integer $count cantidad total de registros
+ * @param Integer $per_page número de registros por página
+ * @param Integer $num_links cantidad de links máximos a mostrar antes y después de la página actual
+ * @param Integer $uri_segment número del uri_segment donde se encuentra el número de página
+ * @return Array Configuración de la paginación
+ */
+if ( !function_exists('config_pagination') ) {
+	function config_pagination($base_url, $count, $per_page, $num_links = 4, $uri_segment = 3)
+	{
+		return [
+			'base_url'			=> $base_url,
+			'total_rows'		=> $count,
+			'per_page'			=> $per_page,
+			"uri_segment"		=> $uri_segment,
+			"first_link"		=> "Primero",
+			"last_link"			=> "Último",
+			"next_link"			=> "Siguiente",
+			"prev_link"			=> "Anterior",
+			"num_links"			=> $num_links,
+			"full_tag_open"		=> "<ul class='pagination'>",
+			"full_tag_close"	=> "</ul>",
+			"first_tag_open"	=> "<li>",
+			"first_tag_close"	=> "</li>",
+			"last_tag_open"		=> "<li>",
+			"last_tag_close"	=> "</li>",
+			"next_tag_open"		=> "<li>",
+			"next_tag_close"	=> "</li>",
+			"prev_tag_open"		=> "<li>",
+			"prev_tag_close"	=> "</li>",
+			"cur_tag_open"		=> "<li><a><b>",
+			"cur_tag_close"		=> "</b></a></li>",
+			"num_tag_open"		=> "<li>",
+			"num_tag_close"		=> "</li>",
+		];
+	}
+}

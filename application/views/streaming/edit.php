@@ -1,6 +1,13 @@
 <div class="posts col-md-9">
+	
+	<p>
+		<a href="<?php echo base_url('streaming/index/' . $page); ?>">
+			Volver
+		</a>
+	</p>
+	
 	<div class='panel panel-default'>
-		<div class='panel panel-heading'>
+		<div class='panel panel-heading'>			
 			<h4>Crear Streaming</h4>
 		</div>
 		<div class='panel panel-body'>

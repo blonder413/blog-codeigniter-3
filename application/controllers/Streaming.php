@@ -78,7 +78,7 @@ class Streaming extends MY_Controller {
 	/**
 	 * @param int $id id del streaming
 	 */
-	public function edit($id)
+	public function edit($id, $page = null)
 	{
 		$streaming = $this->streaming_model->find($id);
 		
@@ -111,11 +111,12 @@ class Streaming extends MY_Controller {
 				$id = $this->streaming_model->update($data);
 				$this->session->set_flashdata('css', 'success');
 				$this->session->set_flashdata('mensaje', 'Registro actualizado exitosamente');
-				redirect( base_url('streaming') );
+				redirect( "streaming/index/" . $page );
 			}
 		}
 		
 		$this->data = [
+			"page"			=> $page,
 			"streaming"		=> $streaming,
 			"title"			=> "Create Streaming | Blonder413",
 		];
@@ -126,9 +127,22 @@ class Streaming extends MY_Controller {
 	
 	public function index()
 	{
-		$streamings = $this->streaming_model->get();
+		if( $this->uri->segment(3) ) {
+                $page = $this->uri->segment(3);
+		} else {
+			$page = 0;
+		}
+		
+		$perPage = 2;
+		
+		$streamings = $this->streaming_model->get( $page, $perPage );
+		
+		$config = config_pagination( base_url('streaming/index'), $this->streaming_model->count(), $perPage );
+		
+		$this->pagination->initialize($config);
 		
 		$this->data = [
+			"page"			=> $page,
 			'streamings'	=> $streamings,
 			'title'			=> 'Streamings | Blonder413',
 			'total'			=> $this->streaming_model->count(),

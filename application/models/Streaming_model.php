@@ -63,7 +63,7 @@ class Streaming_model extends CI_Model{
       $query = $this->db
                 ->from("streamings")
                 ->order_by("id","desc")
-                ->limit($offset,$limit)
+                ->limit($offset, $limit)
                 ->get();
       //echo $this->db->last_query();
                 return $query->result();

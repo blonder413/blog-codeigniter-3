@@ -10,6 +10,7 @@
     <link href="<?php echo base_url() . '/public/img/favicon.png' ?>" rel="icon" type="image/vnd.microsoft.icon"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="<?php echo base_url() . '/public/css/bootstrap.min.css'; ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url() . '/public/css/font-awesome.min.css'; ?>" type="text/css">
 </head>
 <body>
 
