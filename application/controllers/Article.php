@@ -21,12 +21,9 @@ class Article extends CI_Controller {
 			"title"			=> "Create Article | Blonder413",
 		];
 
-    	if ($this->form_validation->run() === FALSE)
-	    {
+    	if ($this->form_validation->run() === FALSE) {
 	        $this->load->view('article/add', $this->data);
-	    }
-	    else
-	    {
+	    } else {
 	        $this->article_model->create();
 	        $this->load->view('article/index');
 	    }

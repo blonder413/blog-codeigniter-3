@@ -53,7 +53,9 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['acerca'] = 'welcome/about';
+$route['acerca']	= 'welcome/about';
+$route['registro']	= 'welcome/signup';
+$route['en-vivo']	= 'welcome/streaming';
 
 $route['articulo/(:any)'] = 'welcome/article/$1';
 $route['article/(:any)'] = 'article/$1';

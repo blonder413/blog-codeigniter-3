@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends MY_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('category_model');
+	}
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -21,7 +27,7 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 		$this->load->model('article_model');
-		$this->load->model('category_model');
+		//$this->load->model('category_model');
 		$this->load->model('comment_model');
 		$this->load->model('user_model');
 		$this->load->library('pagination');
@@ -78,7 +84,7 @@ class Welcome extends MY_Controller {
 	//-----------------------------------------------------------------------------------------------------------------
 	public function about()
 	{
-		$this->load->model('category_model');
+		//$this->load->model('category_model');
 		
 		$categories = $this->category_model->get();
 		
@@ -93,7 +99,7 @@ class Welcome extends MY_Controller {
 	public function article($slug)
 	{
 		$this->load->model('article_model');
-		$this->load->model('category_model');
+//		$this->load->model('category_model');
 		$this->load->model('comment_model');
 
 		if (empty($slug) or is_null($slug)) {
@@ -112,5 +118,19 @@ class Welcome extends MY_Controller {
 		$this->content = 'welcome/article'; // its your view name, change for as per requirement.
         $this->layout($this->data);
 
+	}
+	//-----------------------------------------------------------------------------------------------------------------
+	public function signup()
+	{
+		$categories = $this->category_model->get();
+		
+		$this->data = [
+			
+			"categories"	=> $categories,
+			"title"			=> "Signup | Blonder413",
+		];
+
+		$this->content = 'welcome/signup'; // its your view name, change for as per requirement.
+        $this->layout($this->data);
 	}
 }

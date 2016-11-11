@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'mysql:host=localhost;dbname=blogcodeigniter',
+	'dsn'	=> 'mysql:host=localhost;dbname=blog-codeigniter',
 	'hostname' => 'localhost',
 	'username' => 'pruebas',
 	'password' => '123456',
-	'database' => 'blogcodeigniter',
+	'database' => 'blog-codeigniter',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -9,7 +9,7 @@
     <link href="<?php echo base_url() . '/public/css/blue/style.css' ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url() . '/public/img/favicon.png' ?>" rel="icon" type="image/vnd.microsoft.icon"/>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url() . '/public/css/bootstrap.min.css'; ?>" type="text/css">
 </head>
 <body>
 
@@ -48,6 +48,8 @@
                             <li><a href="curso/yiiframework-2" tabindex="-1">YiiFramework 2</a></li>
                         </ul>
                     </li>
+                    <li><a href="registro">Registro</a></li>
+                    <li><a href="ingreso">Ingreso</a></li>
                 </ul>
             </div>
         </div>
@@ -155,8 +157,8 @@
     </footer>
 
     <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="<?php echo base_url('/public/js/jquery-3.1.1.min.js'); ?>"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url('/public/js/bootstrap.min.js'); ?>"></script>
 </body>
 </html>
