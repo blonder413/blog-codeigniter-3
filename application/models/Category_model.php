@@ -1,7 +1,7 @@
 <?php
-class Category_model extends CI_Model{
-  public $category;
-  public $seo_slug;
+class Category_model extends CI_Model {
+	public $category;
+  public $slug;
   public $image;
   public $description;
   public $created_by;
@@ -76,27 +76,26 @@ class Category_model extends CI_Model{
 
   public function create()
   {
-    $this->type = $_POST["category"];
-    $this->created_at = time();
-    $this->updated_at = time();
+    $this->category			= $this->input->post('category');
+		$this->slug					= $this->input->post('category');
+    $this->image				= $this->input->post("image");
+		$this->description	= $this->input->post('description');
+		$this->created_by		= 1;
+    $this->created_at 	= date("Y-m-d H:i:s");
+		$this->updated_by		= 1;
+    $this->updated_at 	= date("Y-m-d H:i:s");
+
 
     $this->db->insert("categories", $this);
-
-    /*
-    $sql = "INSERT INTO type VALUES($this->db->escape($this->type))";
-    $this->db->query($sql );
-    */
-
-    redirect("article");
+    return $this->db->insert_id();
   }
-
-  public function update()
-  {
-    $this->type = $_POST["category"];
-    $this->updated_at = time();
-
-//    $this->db->update("type", $this, array("id" => $_POST["id"]));
-    $this->db->where("id", $id);
-    $this->db->update("categories", $this);
-  }
+  /**
+   * actualiza una categoría
+   * @param int $category datos de la categoría
+   */
+  public function update($category = array())
+	{
+		$this->db->where("id", $category["id"]);
+		$this->db->update("categories", $category);
+	}
 }

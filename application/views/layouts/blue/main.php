@@ -49,8 +49,17 @@
                             <li><a href="curso/yiiframework-2" tabindex="-1">YiiFramework 2</a></li>
                         </ul>
                     </li>
-                    <li><a href="registro">Registro</a></li>
-                    <li><a href="ingreso">Ingreso</a></li>
+                    <li><a href="<?php echo base_url('registro'); ?>">Registro</a></li>
+                    <li><a href="<?php echo base_url('ingreso'); ?>">Ingreso</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                        <ul id="w4" class="dropdown-menu">
+                            <li><a href="<?php echo base_url('article/index'); ?>" tabindex="-1">Article</a></li>
+                            <li><a href="<?php echo base_url('category'); ?>" tabindex="-1">Category</a></li>
+                            <li><a href="<?php echo base_url('course'); ?>" tabindex="-1">Course</a></li>
+                            <li><a href="<?php echo base_url('streaming'); ?>" tabindex="-1">Streaming</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

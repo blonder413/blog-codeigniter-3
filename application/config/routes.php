@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['acerca']	= 'welcome/about';
+$route['ingreso']	= 'welcome/login';
 $route['registro']	= 'welcome/signup';
 $route['en-vivo']	= 'welcome/streaming';
 
