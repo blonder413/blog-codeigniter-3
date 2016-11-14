@@ -1,7 +1,19 @@
 <?php
 class Article_model extends CI_Model{
+  
+  public $number;
   public $title;
+  public $slug;
+  public $topic;
   public $detail;
+  public $abstract;
+  public $video;
+  public $type_id;
+  public $download;
+  public $category_id;
+  public $tags;
+  public $status;
+  public $course_id;
   public $created_by;
   public $created_at;
   public $updated_by;
@@ -75,21 +87,31 @@ class Article_model extends CI_Model{
     }
   }
 
-  public function add()
-  {
-    $this->load->view("article/add");
-  }
-
+  /**
+   * insert a new register in the database
+   * @return integer id of the register
+   */
   public function create()
   {
     $this->load->helper('url');
 
-    $this->title      = $this->input->post('article_title');
-    $this->slug       = url_title($this->input->post('article_title'), 'dash', TRUE);
-    $this->detail     = $this->input->post('detail');
-    $this->created_at = time();
-    $this->updated_at = time();
-
+    $this->number       = $this->input->post("number") ? $this->input->post("number") : null;
+    $this->title        = $this->input->post('title');
+    $this->slug         = url_title($this->input->post('title'), 'dash', TRUE);
+    $this->topic        = $this->input->post("topic");
+    $this->detail       = $this->input->post('detail');
+    $this->abstract     = $this->input->post("abstract");
+    $this->video        = $this->input->post("video");
+    $this->type_id      = (int) $this->input->post("type_id");
+    $this->download     = $this->input->post("download");
+    $this->category_id  = $this->input->post("category_id");
+    $this->tags         = $this->input->post("tags");
+    $this->status       = true;
+    $this->course_id    = (int) $this->input->post("course_id");
+    $this->created_by   = 1;
+    $this->created_at   = date("Y-m-d H:i:s");
+    $this->updated_by   = 1;
+    $this->updated_at   = date("Y-m-d H:i:s");
 
     $this->db->insert("articles", $this);
     return $this->db->insert_id();
@@ -98,14 +120,27 @@ class Article_model extends CI_Model{
     $sql = "INSERT INTO type VALUES($this->db->escape($this->type))";
     $this->db->query($sql );
     */
-
-    // redirect("article");
   }
   
-  public function update()
+  public function update($id)
   {
-    $this->type = $_POST["article"];
-    $this->updated_at = time();
+    $this->number       = $this->input->post("number") ? $this->input->post("number") : null;
+    $this->title        = $this->input->post('title');
+    $this->slug         = url_title($this->input->post('title'), 'dash', TRUE);
+    $this->topic        = $this->input->post("topic");
+    $this->detail       = $this->input->post('detail');
+    $this->abstract     = $this->input->post("abstract");
+    $this->video        = $this->input->post("video");
+    $this->type_id      = (int) $this->input->post("type_id");
+    $this->download     = $this->input->post("download");
+    $this->category_id  = $this->input->post("category_id");
+    $this->tags         = $this->input->post("tags");
+    $this->status       = true;
+    $this->course_id    = (int) $this->input->post("course_id");
+    $this->created_by   = 1;
+    $this->created_at   = date("Y-m-d H:i:s");
+    $this->updated_by   = 1;
+    $this->updated_at   = date("Y-m-d H:i:s");
 
 //    $this->db->update("type", $this, array("id" => $_POST["id"]));
     $this->db->where("id", $id);

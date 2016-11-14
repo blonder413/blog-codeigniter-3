@@ -74,18 +74,21 @@ class Category_model extends CI_Model {
     $this->load->view("category/add");
   }
 
-  public function create()
+  public function create($image)
   {
     $this->category			= $this->input->post('category');
 		$this->slug					= $this->input->post('category');
-    $this->image				= $this->input->post("image");
+    $this->image				= $image;
 		$this->description	= $this->input->post('description');
 		$this->created_by		= 1;
     $this->created_at 	= date("Y-m-d H:i:s");
 		$this->updated_by		= 1;
     $this->updated_at 	= date("Y-m-d H:i:s");
-
-
+/*
+		echo "<pre>";
+		print_r($this);
+		exit;
+*/		
     $this->db->insert("categories", $this);
     return $this->db->insert_id();
   }

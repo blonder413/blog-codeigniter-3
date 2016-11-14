@@ -1,7 +1,12 @@
 <div class="posts col-md-9">
+	<p>
+		<a href="<?php echo base_url('article/index/' . $page); ?>">
+			Volver
+		</a>
+	</p>
 	<div class='panel panel-default'>
 		<div class='panel panel-heading'>
-			<h4>Crear Artículo</h4>
+			<h4>Editar Artículo <?php echo $article->title; ?></h4>
 		</div>
 		<div class='panel panel-body'>
 			
@@ -13,7 +18,7 @@
 			
 			<?php
 			$attributes = array('id' => 'form_article');
-			echo form_open('article/add', $attributes);
+			echo form_open("article/edit/$article->id/$page", $attributes);
 			?>
 			
 			<?php
@@ -39,7 +44,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'number',
 						'id'            => 'number',
-						'value'			=> set_value_input(array(),'number','number'),
+						'value'			=> set_value_input($article,'number', $article->number),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -56,7 +61,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'title',
 						'id'            => 'title',
-						'value'			=> set_value_input(array(),'title','title'),
+						'value'			=> set_value_input($article,'title', $article->title),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -73,7 +78,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'topic',
 						'id'            => 'topic',
-						'value'			=> set_value_input(array(),'topic','topic'),
+						'value'			=> set_value_input($article,'topic', $article->topic),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -90,7 +95,7 @@
 					'class'			=> 'form-control',
 					'name'          => 'detail',
 					'id'            => 'detail',
-				//        'value'         => 'johndoe',
+					'value'			=> set_value_input($article,'topic', $article->detail),
 				//        'maxlength'     => '150',
 				//        'size'          => '50',
 				//        'style'         => 'width:50%'
@@ -108,7 +113,7 @@
 					'class'			=> 'form-control',
 					'name'          => 'abstract',
 					'id'            => 'abstract',
-				//        'value'         => 'johndoe',
+					'value'			=> set_value_input($article,'topic', $article->abstract),
 				//        'maxlength'     => '150',
 				//        'size'          => '50',
 				//        'style'         => 'width:50%'
@@ -126,7 +131,7 @@
 					'class'			=> 'form-control',
 					'name'          => 'video',
 					'id'            => 'video',
-				//        'value'         => 'johndoe',
+					'value'			=> set_value_input($article,'topic', $article->video),
 				//        'maxlength'     => '150',
 				//        'size'          => '50',
 				//        'style'         => 'width:50%'
@@ -144,7 +149,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'type_id',
 						'id'            => 'type_id',
-						'value'			=> set_value_input(array(),'type_id','type_id'),
+						'value'			=> set_value_input($article,'topic', $article->type_id),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -161,7 +166,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'download',
 						'id'            => 'download',
-						'value'			=> set_value_input(array(),'download','download'),
+						'value'			=> set_value_input($article,'topic', $article->download),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -177,7 +182,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'category_id',
 						'id'            => 'category_id',
-						'value'			=> set_value_input(array(),'category_id','category_id'),
+						'value'			=> set_value_input($article,'topic', $article->category_id),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -194,7 +199,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'tags',
 						'id'            => 'tags',
-						'value'			=> set_value_input(array(),'tags','tags'),
+						'value'			=> set_value_input($article,'topic', $article->tags),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'
@@ -211,7 +216,7 @@
 						'class'			=> 'form-control',
 						'name'          => 'course_id',
 						'id'            => 'course_id',
-						'value'			=> set_value_input(array(),'course_id','course_id'),
+						'value'			=> set_value_input($article,'topic', $article->course_id),
 						'maxlength'     => '150',
 						'size'          => '50',
 						'style'         => 'width:50%'

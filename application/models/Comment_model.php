@@ -16,7 +16,7 @@ class Comment_model extends CI_Model {
 	public function countComments($article_id)
 	{
 		$query=$this->db
-                ->from("comment")
+                ->from("comments")
                 ->where("article_id = $article_id")
                 ->count_all_results();
                 return $query;

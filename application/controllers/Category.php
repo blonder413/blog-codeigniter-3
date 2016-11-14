@@ -23,16 +23,43 @@ class Category extends MY_Controller {
     	$this->form_validation->set_rules(
 			'category', 'Category', 'required|max_length[100]'
 		);
+		/*
     	$this->form_validation->set_rules(
 			'image', 'Image', 'required'
 		);
+		*/
 		$this->form_validation->set_rules(
 			'description', 'Description', 'required'
 		);
 		
 		if ( $this->input->post() ) {
 			if ( $this->form_validation->run() ) {
-				$id = $this->category_model->create();
+				
+				$config["upload_path"] = "./public/img/categories";
+				$config["allowed_types"] = "png|jpg|jpeg";
+//				$config["max_size"] = "10";
+//				$config["max_width"] = "800";
+//				$config["max_height"] = "600";
+//				$config["encrypt_name"] = true;
+
+				$this->load->library("upload", $config);
+				
+				if ( ! $this->upload->do_upload("image") ) {
+					$error = ["error" => $this->upload->display_errors()];
+					//$this->content = 'category/add'; // its your view name, change for as per requirement.
+					//$this->layout('blue', $this->data);
+				}
+				/*
+				echo "<pre>";
+				print_r($this->upload);
+				exit;
+				*/
+				$image = $this->upload->data();
+				
+				$file_name = $image["file_name"];
+				
+				$id = $this->category_model->create($file_name);
+				
 				$this->session->set_flashdata('css', 'success');
 				$this->session->set_flashdata('mensaje', 'Registro creado exitosamente');
 				redirect( base_url('category') );
@@ -57,9 +84,11 @@ class Category extends MY_Controller {
 	
 	
 	/**
+	 * borrar un registro de la base de datos
 	 * @param int $id id de la categoría
+	 * @param int $page número de página a la que debe redirigirse
 	 */
-	public function delete($id)
+	public function delete($id, $page)
 	{
 		$category = $this->category_model->find($id);
 		
@@ -70,7 +99,7 @@ class Category extends MY_Controller {
 		$id = $this->category_model->delete($id);
 		$this->session->set_flashdata('css', 'success');
 		$this->session->set_flashdata('mensaje', 'Registro eliminado exitosamente');
-		redirect( base_url('category') );
+		redirect( base_url("category/$page") );
 	}
 	/**
 	 * @param int $id id de la categoría

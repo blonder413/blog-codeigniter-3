@@ -11,10 +11,7 @@
 				</div>
 			<?php } ?>
 			
-			<?php
-			$attributes = array('id' => 'form_category');
-			echo form_open('category/add', $attributes);
-			?>
+			<?php echo form_open_multipart(null, ["name" => "form_category"]); ?>
 			
 			<div class="form-group">
 				<?php echo form_label('Category', 'category'); ?>
@@ -41,12 +38,12 @@
 						'class'			=> 'form-control',
 						'name'          => 'image',
 						'id'            => 'image',
-						'value'			=> set_value_input(array(),'image','image'),
-						'maxlength'     => '150',
-						'size'          => '50',
-						'style'         => 'width:50%'
+//						'value'			=> set_value_input(array(),'image','image'),
+//						'maxlength'     => '150',
+//						'size'          => '50',
+//						'style'         => 'width:50%'
 				);
-				echo form_input($data);
+				echo form_upload($data);
 				?>
 			</div>
 			
